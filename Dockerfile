@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get -y --no-install-recommends install supervisor && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 COPY supervisor/ /etc/supervisor/conf.d/
+COPY syslog.conf /etc/syslog.conf
 
-EXPOSE 5901
 CMD ["/usr/local/bin/boot-supervisord"]
 

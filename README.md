@@ -3,13 +3,15 @@
 This simple image installs supervisor, so you can plonk down your
 processes in /etc/supervisor/conf.d.  It also installs a syslog
 process that logs to stdout, effectively sending syslog to the Docker
-logging system.
+logging system.  At boot, it clears /tmp for you as well.
 
 # Install
 
 You can install with:
 
     docker pull jgoerzen/supervisor
+
+Your Dockerfile should use CMD to run `/usr/local/bin/boot-supervisord`.
 
 # Source
 
