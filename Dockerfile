@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get -y --no-install-recommends install supervisor inetutils-syslogd && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 COPY supervisor/ /etc/supervisor/conf.d/
+COPY scripts/ /usr/local/bin/
 COPY syslog.conf /etc/syslog.conf
 
 CMD ["/usr/local/bin/boot-supervisord"]
