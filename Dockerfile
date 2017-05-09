@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER John Goerzen <jgoerzen@complete.org>
 # VNC doesn't start without xfonts-base
 RUN apt-get update && \
